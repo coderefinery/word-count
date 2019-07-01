@@ -1,15 +1,26 @@
-# Build both steps required for executing the character count example
-all: processed_data/abyss.dat results/abyss.png results/results.txt
+SRCDIR := data
+TMPDIR := processed_data
+RESDIR := results
 
-# Count words (Step 1)
-processed_data/abyss.dat: data/abyss.txt source/wordcount.py
-	python source/wordcount.py data/abyss.txt processed_data/abyss.dat
+SRCS = $(wildcard $(SRCDIR)/*.txt)
+OBJS = $(patsubst $(SRCDIR)/%.txt,$(TMPDIR)/%.dat,$(SRCS))
+OBJS += $(patsubst $(SRCDIR)/%.txt,$(RESDIR)/%.png,$(SRCS))
+OBJS += $(RESDIR)/results.txt
+DATA = $(patsubst $(SRCDIR)/%.txt,$(TMPDIR)/%.dat,$(SRCS))
 
-# Create Bar chart (Step 2)
-results/abyss.png: processed_data/abyss.dat source/plotcount.py
-	python source/plotcount.py processed_data/abyss.dat results/abyss.png
+all: $(OBJS)
 
-# Test Zipf's law
-results/results.txt: processed_data/abyss.dat source/zipf_test.py
-	python source/zipf_test.py processed_data/abyss.dat > results/results.txt
+$(TMPDIR)/%.dat: $(SRCDIR)/%.txt source/wordcount.py
+	python source/wordcount.py $< $@
 
+$(RESDIR)/%.png: $(TMPDIR)/%.dat source/plotcount.py
+	python source/plotcount.py $< $@
+
+$(RESDIR)/results.txt: $(DATA) source/zipf_test.py
+	python source/zipf_test.py $(DATA) > $@
+
+clean:
+	@$(RM) $(TMPDIR)/*
+	@$(RM) $(RESDIR)/*
+
+.PHONY: clean directories
