@@ -7,17 +7,17 @@ Usage
 How to clone the code
 ---------------------
 
-To clone the source code run following commands::
-
-  $ git clone https://github.com/advelex/word-count
+Write me ...
 
 
 Make
 ----
 
-Generate all results::
+Generate all results:
 
-  $ make -f Makefile_all
+::
+
+  $ make
 
 
 Snakemake

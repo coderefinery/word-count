@@ -33,13 +33,11 @@ rule count_words:
         '''
 
 # create a plot for each book
-# shows example usage of the resources keyword
 rule make_plot:
     input:
         plotcount='source/plotcount.py',
 	book='processed_data/{file}.dat'
     output: 'results/{file}.png'
-    resources: gpu=1
     shell: 'python {input.plotcount} {input.book} {output}'
 
 # generate summary table
