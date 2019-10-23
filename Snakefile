@@ -9,14 +9,6 @@ rule all:
     input:
         'zipf_analysis.tar.gz'
 
-# delete everything so we can re-run things
-rule clean:
-    shell:
-        '''
-        rm -rf source/__pycache__
-        rm -f zipf_analysis.tar.gz processed_data/* results/*
-        '''
-
 # count words in one of our books
 # logfiles from each run are put in .log files"
 rule count_words:
