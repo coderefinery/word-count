@@ -2,7 +2,7 @@
 DATA = glob_wildcards('data/{book}.txt').book
 
 # this is for running on HPC resources
-localrules: all, clean, make_archive
+localrules: all, make_archive
 
 # the default rule
 rule all:
