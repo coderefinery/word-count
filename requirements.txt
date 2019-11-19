@@ -1,7 +1,6 @@
 numpy==1.16.4
 matplotlib==3.1.0
-git+https://github.com/pytries/datrie.git@3e22a27ca0104fe3c62b3251c0b75c281f089e43
-snakemake==5.5.0
+snakemake-minimal==5.5.0
 
 # to check python code style
 pycodestyle
