@@ -7,7 +7,7 @@ LABEL maintainer="kthw@kth.se"
 # update the apt package manager
 RUN apt-get update
 RUN apt-get install -y software-properties-common
-RUN add-apt-repository ppa:jonathonf/python-3.6
+RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update && apt-get -y install locales
 
 
@@ -16,6 +16,7 @@ RUN apt-get install -y build-essential && apt-get install -y nano
 
 # install python
 RUN apt-get install -y python3.6 python3.6-dev python3-pip python3.6-venv
+RUN pip3 install --upgrade pip
 RUN yes | pip3 install numpy
 RUN yes | pip3 install matplotlib
 RUN yes | pip3 install snakemake
