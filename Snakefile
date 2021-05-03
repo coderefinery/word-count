@@ -20,7 +20,6 @@ rule count_words:
     log: 'processed_data/{file}.log'
     shell:
         '''
-        echo "Running {input.wc} with {threads} cores on {input.book}." &> {log} &&
             python {input.wc} {input.book} {output} >> {log} 2>&1
         '''
 
