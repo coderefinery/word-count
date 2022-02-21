@@ -3,7 +3,7 @@
 Purpose
 =======
 
-Write me ...
+The purpose is to demonstrate a simple power law.
 
 
 Zipf's law
