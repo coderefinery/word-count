@@ -1,6 +1,2 @@
-*~
-__pycache__/
-venv/
-results/*.png
-results/*.txt
-processed_data/*.dat
+.snakemake
+*/*.log
