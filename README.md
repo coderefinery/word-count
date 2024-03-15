@@ -23,6 +23,8 @@ $ python statistics/count.py data/isles.txt > statistics/isles.data
 $ python plot/plot.py --data-file statistics/isles.data --plot-file plot/isles.png
 ```
 
+To run the scripts on all books you can run the bash script `bash run_all.sh`. 
+
 ### Workflow
 
 Implemented using Snakemake in `Snakefile`.
