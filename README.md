@@ -33,7 +33,7 @@ Implemented using Snakemake in `Snakefile`.
 
 End to end tests are provided in the test directory.
 
-## Achknowledgement
+## Acknowledgement
 
 Inspired by and derived from https://hpc-carpentry.github.io/hpc-python/
   which is distributed under
