@@ -5,6 +5,8 @@
 This example project will count words in a given text and plot a bar chart of the 10
 most common words.
 
+![](https://coderefinery.github.io/reproducible-research/_images/arrows.png)
+
 ## Dependencies
 
 See `environment.yml`.
