@@ -5,6 +5,8 @@
 This example project will count words in a given text and plot a bar chart of the 10
 most common words.
 
+![](https://coderefinery.github.io/reproducible-research/_images/arrows.png)
+
 ## Dependencies
 
 See `environment.yml`.
@@ -19,11 +21,12 @@ In this example we wish to:
 
 For one book (`isles.txt`) use the scripts like this:
 ```
-$ python statistics/count.py data/isles.txt > statistics/isles.data
-$ python plot/plot.py --data-file statistics/isles.data --plot-file plot/isles.png
+$ python code/count.py data/isles.txt > statistics/isles.data
+$ python code/plot.py --data-file statistics/isles.data --plot-file plot/isles.png
 ```
 
-To run the scripts on all books you can run the bash script `bash run_all.sh`. 
+To run these scripts for all books you can collect these calls all into one bash script and run it with `bash run_all.sh`. 
+One step further and less code, you could also loop through all known book titles in a bash script and run it with: `bash run_all_loop.sh`.
 
 ### Workflow
 

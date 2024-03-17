@@ -1,8 +1,11 @@
-#!/usr/bin/env bash
+python code/count.py data/isles.txt > statistics/isles.data
+python code/plot.py --data-file statistics/isles.data --plot-file plot/isles.png
 
-# loop over all books to count words and plot the frequency of the 10 most common words per book
+python code/count.py data/abyss.txt > statistics/abyss.data
+python code/plot.py --data-file statistics/abyss.data --plot-file plot/abyss.png
 
-for title in abyss isles last sierra; do
-    python statistics/count.py data/${title}.txt > statistics/${title}.data
-    python plot/plot.py --data-file statistics/${title}.data --plot-file plot/${title}.png
-done
+python code/count.py data/last.txt > statistics/last.data
+python code/plot.py --data-file statistics/last.data --plot-file plot/last.png
+
+python code/count.py data/sierra.txt > statistics/sierra.data
+python code/plot.py --data-file statistics/sierra.data --plot-file plot/sierra.png
