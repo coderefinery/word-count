@@ -25,7 +25,8 @@ $ python code/count.py data/isles.txt > statistics/isles.data
 $ python code/plot.py --data-file statistics/isles.data --plot-file plot/isles.png
 ```
 
-To run the scripts on all books you can run the bash script `bash run_all.sh`. 
+To run these scripts for all books you can collect these calls all into one bash script and run it with `bash run_all.sh`. 
+One step further and less code, you could also loop through all known book titles in a bash script and run it with: `bash run_all_loop.sh`.
 
 ### Workflow
 
