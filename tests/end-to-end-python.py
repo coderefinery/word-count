@@ -8,7 +8,7 @@ import sys
 
 # Run count.py using whatever Python we are using right now.  Get the output as
 # a string.
-output = subprocess.check_output([sys.executable, 'statistics/count.py', 'data/abyss.txt']).decode()
+output = subprocess.check_output([sys.executable, 'code/count.py', 'data/abyss.txt']).decode()
 
 # Split the string and confirm the expected lines are in there.
 output = output.split('\n')
